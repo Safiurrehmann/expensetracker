@@ -4,7 +4,7 @@ A private, responsive salary allocation tracker based on `personal_salary_alloca
 
 ## Connect your Supabase project
 
-1. Create a Supabase project. Set the owner email in `.env.local`. The sign-in screen has an owner-only account creation action; you may need to confirm the email before signing in.
+1. Create a Supabase project. Set the owner email in `.env.local`. The sign-in screen has an owner-only account creation action. Supabase requires email confirmation in the configured project: follow the link in the email, then sign in. If it does not arrive, use the resend action after the provider cooldown.
 2. For a fresh project, apply [`supabase/migrations/001_tracker.sql`](supabase/migrations/001_tracker.sql) once in Supabase SQL Editor. The migration creates owner-scoped tables and transactional RPCs.
 3. Copy `.env.example` to `.env.local`. Set `SUPABASE_URL`, `SUPABASE_ANON_KEY`, and `TRACKER_OWNER_EMAIL` from **Project Settings → API**, and set the email to the exact Auth user you created. Use the public/anon project key, **never** the service-role key. Both variables are server-only because they lack `NEXT_PUBLIC_`.
 4. Run `npm install` and `npm run dev`, then open `http://localhost:3000` and sign in.
